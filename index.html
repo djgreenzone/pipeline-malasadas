@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pipeline Malasadas | Hawaiian Donuts in Las Vegas</title>
+    <meta name="description" content="Discover fresh, made-to-order malasadas in Las Vegas. Order online for pickup, delivery, or shipping.">
+    <meta name="keywords" content="malasadas Las Vegas, Hawaiian donuts Las Vegas, bakery Las Vegas, Pipeline Malasadas">
+    
+    <link rel="icon" type="image/png" href="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db130d3bad83727974bae7.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Reset & Brand Variables */
+        :root {
+            --color-white-wash: #C9E7EB;
+            --color-shore-break: #599CB0;
+            --color-seafoam: #63CCC9;
+            --color-deep-sea: #034A6B;
+            --color-dark-blue: #153047;
+            --color-white: #FFFFFF;
+            --color-background: #FCFCFC;
+            --color-button-primary: #419B86; 
+
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'Dancing Script', cursive;
+
+            --section-padding: 100px;
+            --container-width: 1200px;
+            --border-radius: 25px; 
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--color-dark-blue);
+            background-color: var(--color-background);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 40px;
+        }
+
+        .section {
+            padding: var(--section-padding) 0;
+            position: relative;
+            background: transparent;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-dark-blue);
+        }
+
+        h1 { font-size: 72px; }
+        h2 { font-size: 56px; text-align: center; margin-bottom: 24px; }
+        h3 { font-size: 32px; margin-bottom: 16px; }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-intro {
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .accent-text {
+            font-family: var(--font-accent);
+            font-size: 32px;
+            color: var(--color-shore-break);
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            font-family: var(--font-heading);
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--border-radius);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--color-button-primary);
+            color: var(--color-white);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(21, 48, 71, 0.15);
+        }
+        
+        .grid-2-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .img-wrapper {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(21, 48, 71, 0.1);
+        }
+        
+        .img-wrapper img {
+            width: 100%;
+            display: block;
+        }
+
+        /* Header & Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 24px 0;
+            background-color: transparent;
+            transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .header.scrolled {
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 16px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            transition: height 0.3s ease;
+        }
+        
+        .header.scrolled .logo img {
+            height: 40px;
+        }
+
+        .nav-menu { list-style: none; display: flex; align-items: center; }
+        .nav-menu li { margin-left: 40px; }
+        .nav-link { text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+        .header:not(.scrolled) .nav-link { color: var(--color-white); }
+        .header.scrolled .nav-link { color: var(--color-dark-blue); }
+        .nav-link.active, .nav-link:hover { color: var(--color-seafoam); }
+
+        /* REVISION: Updated nav CTA button color */
+        .nav-link.nav-cta {
+            background-color: var(--color-button-primary); /* Standout color for hero */
+            color: var(--color-white);
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .header.scrolled .nav-link.nav-cta {
+            background-color: var(--color-dark-blue); /* High contrast for scrolled header */
+            color: var(--color-white);
+        }
+
+        .nav-link.nav-cta:hover {
+            background-color: var(--color-seafoam);
+            color: var(--color-white);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%;
+            width: auto; height: auto; object-fit: cover; transform: translate(-50%, -50%); z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(21, 48, 71, 0.7), rgba(21, 48, 71, 0.1)); z-index: -1;
+        }
+
+        .hero-content { max-width: 700px; }
+        .hero-content .accent-text { color: var(--color-seafoam); font-size: 36px; }
+        .hero-content h1 {
+            color: var(--color-white); font-size: 80px; font-weight: 800;
+            margin: 10px 0 20px 0; text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .hero-content p { font-size: 20px; margin-bottom: 40px; max-width: 550px; }
+
+        /* Wave Section Dividers */
+        .wave-container {
+            position: absolute; bottom: -1px; left: 0; width: 100%;
+            overflow: hidden; line-height: 0; transform: rotate(180deg);
+        }
+        .wave-container.top { top: -1px; bottom: auto; transform: rotate(0deg); }
+        .wave-container svg { position: relative; display: block; width: calc(100% + 1.3px); height: 120px; }
+        .wave-container .shape-fill { fill: var(--color-background); }
+        
+        /* Section Backgrounds */
+        .bg-deep-sea { background-color: var(--color-deep-sea); }
+        .bg-white-wash { background-color: var(--color-white-wash); }
+        
+        /* Adjust padding for sections with top waves */
+        .section.has-wave-top { padding-top: calc(var(--section-padding) + 80px); }
+        .section.has-wave-bottom { padding-bottom: calc(var(--section-padding) + 80px); }
+
+        /* Monthly Flavors Section */
+        .flavors-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .flavor-featured { text-align: center; }
+        .flavor-featured img {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 30px auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 20px 40px rgba(21, 48, 71, 0.1);
+        }
+        .flavor-featured h3 { font-size: 40px; }
+        .flavor-featured .price { font-size: 28px; color: var(--color-shore-break); font-family: var(--font-heading); margin: 10px 0 20px; }
+        
+        .flavor-list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 25px rgba(21, 48, 71, 0.08);
+            margin-bottom: 20px;
+        }
+        .flavor-list-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 15px;
+            flex-shrink: 0;
+        }
+        .flavor-list-item h4 { font-size: 22px; margin-bottom: 5px; }
+        .flavor-list-item .price { font-size: 18px; font-weight: 600; color: var(--color-shore-break); }
+
+        /* Special Dates Section */
+        #dates-section h2, #dates-section h3, #dates-section p, #dates-section .accent-text { color: var(--color-white); }
+        .dates-box {
+            background: rgba(255,255,255,0.05); padding: 60px; border-radius: var(--border-radius);
+            max-width: 800px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.2);
+        }
+        .dates-box h3 { font-size: 28px; color: var(--color-seafoam); }
+        .dates-box p { font-size: 20px; opacity: 0.9; }
+
+        /* Instagram Feed Section */
+        .insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .insta-post { position: relative; overflow: hidden; border-radius: var(--border-radius); aspect-ratio: 1/1; }
+        .insta-post img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+        .insta-post:hover img { transform: scale(1.1); }
+        .insta-overlay {
+            position: absolute; inset: 0; background: rgba(3, 74, 107, 0.7); display: flex;
+            align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease;
+            color: white; font-size: 32px;
+        }
+        .insta-post:hover .insta-overlay { opacity: 1; }
+
+        /* Newsletter Section */
+        .newsletter-form {
+            display: flex; justify-content: center; max-width: 600px; margin: 0 auto;
+            border: 1px solid var(--color-shore-break); border-radius: var(--border-radius); overflow: hidden;
+        }
+        .newsletter-form input {
+            flex-grow: 1; padding: 20px; border: none; font-size: 16px;
+            font-family: var(--font-body); background: var(--color-white); color: var(--color-dark-blue);
+        }
+        .newsletter-form input:focus { outline: 2px solid var(--color-seafoam); }
+        .newsletter-form button {
+            padding: 20px 40px; border: none; background-color: var(--color-shore-break);
+            color: white; font-family: var(--font-heading); font-size: 16px;
+            text-transform: uppercase; cursor: pointer; transition: background-color 0.3s ease;
+        }
+        .newsletter-form button:hover { background-color: var(--color-deep-sea); }
+        
+        /* Footer */
+        .footer { background-color: var(--color-dark-blue); color: var(--color-white); padding: 60px 0; position: relative; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 80px; }
+        .footer-column h4 { color: var(--color-white); margin-bottom: 20px; font-size: 18px; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.3s ease; }
+        .footer-links a:hover { color: var(--color-seafoam); }
+        .footer-bottom { text-align: center; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 40px; }
+        .footer-contact p { margin-bottom: 5px; color: rgba(255,255,255,0.7); font-size: 14px; }
+        .footer-contact a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .footer-contact a:hover { color: var(--color-white); }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            h1 { font-size: 60px; } h2 { font-size: 48px; } .hero-content h1 { font-size: 64px; }
+            .nav-menu { display: none; } .grid-2-col { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .flavors-layout { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            :root { --section-padding: 80px; } body { font-size: 16px; }
+            h1 { font-size: 48px; } h2 { font-size: 40px; } .hero-content h1 { font-size: 48px; }
+            .hero-content p { font-size: 18px; } .container { padding: 0 20px; }
+            .insta-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .wave-container svg { height: 80px; }
+            .section.has-wave-top { padding-top: calc(var(--section-padding) + 40px); }
+            .section.has-wave-bottom { padding-bottom: calc(var(--section-padding) + 40px); }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db130d6cca5b559d5dcf4f.png" alt="Pipeline Malasadas Logo">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#" class="nav-link active">HOME</a></li>
+                    <li><a href="#" class="nav-link">ABOUT US</a></li>
+                    <li><a href="/products" class="nav-link">PRODUCTS</a></li>
+                    <li><a href="/specials" class="nav-link">SPECIALS</a></li>
+                    <li><a href="/locations" class="nav-link">LOCATIONS</a></li>
+                    <li><a href="https://order.spoton.com/so-pipeline-malasadas-21632/las-vegas-nv/673b9c2f9514788d52c6dc3d" target="_blank" class="nav-link nav-cta">ORDER NOW</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <video class="hero-video" src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db0b2ed6293b34d319c64e.mov" autoplay loop muted playsinline></video>
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="accent-text">E Komo Mai</div>
+                    <h1>Hawaii's Favorite Donut in Las Vegas</h1>
+                    <p>Made fresh to order, our malasadas have a crisp, golden exterior and a soft, fluffy interior. Coated in a variety of sugar flavors for the perfect treat.</p>
+                    <a href="https://order.spoton.com/so-pipeline-malasadas-21632/las-vegas-nv/673b9c2f9514788d52c6dc3d" target="_blank" class="btn btn-primary">Order For Pickup</a>
+                </div>
+            </div>
+            <div class="wave-container">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+        
+        <section id="monthly-flavors-section" class="section has-wave-top">
+            <div class="container">
+                <span class="accent-text text-center" style="display: block;">September 29th, 2025</span>
+                <h2>Monthly Flavors</h2>
+                <p class="section-intro">Perfect for sharing (or not!), our curated boxes are the best way to enjoy a variety of our fresh, hot malasadas.</p>
+                <div class="flavors-layout">
+                    <div class="flavor-featured">
+                        <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db1597d6293b702e1b25e8.jpeg" alt="Full Pipe Box Custom">
+                        <h3>Full Pipe Box Custom</h3>
+                        <div class="price">$37.80</div>
+                        <p>Our biggest and best value. A dozen malasadas with your choice of custom sugar coatings and fillings.</p>
+                    </div>
+                    <div class="flavor-list">
+                        <div class="flavor-list-item">
+                            <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db152d9ab175ffa7c3fd05.jpeg" alt="Half Pipe Box Custom">
+                            <div>
+                                <h4>Half Pipe Box Custom</h4>
+                                <div class="price">$21.00</div>
+                            </div>
+                        </div>
+                        <div class="flavor-list-item">
+                            <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db15cbcbc8a8a28151440a.jpeg" alt="Half Pipe Classic Filled">
+                            <div>
+                                <h4>Half Pipe Classic Filled</h4>
+                                <div class="price">$21.00</div>
+                            </div>
+                        </div>
+                        <div class="flavor-list-item">
+                            <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db1604814115b262db465c.jpeg" alt="Full Pipe Box One Flavor">
+                            <div>
+                                <h4>Full Pipe Box One Flavor</h4>
+                                <div class="price">$37.80</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dates-section" class="section bg-deep-sea has-wave-top">
+             <div class="wave-container top">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" style="fill:var(--color-background);"></path>
+                </svg>
+            </div>
+            <div class="container">
+                <span class="accent-text text-center" style="display: block;">Don't Miss Out</span>
+                <h2>Special Upcoming Dates</h2>
+                <div class="dates-box">
+                    <h3>First Responders Day: 9/11/25</h3>
+                    <p>Get two sugar malasadas and a Hawaiian coffee for $9.11. All first responders in uniform get a FREE sugar malasada with any purchase.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-section" class="section has-wave-top">
+            <div class="wave-container top">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" style="fill:var(--color-deep-sea);"></path>
+                </svg>
+            </div>
+            <div class="container">
+                <div class="grid-2-col">
+                    <div class="content-box">
+                        <div class="accent-text">Made Fresh Daily</div>
+                        <h2>What is a Malasada?</h2>
+                        <p>Pronounced Ma-la-sa-dah, this donut originated in Portugal and found its way to Hawaiʻi back in the plantation days. All of our dough is made from scratch and fried to perfection without any greasiness.</p>
+                        <p>You wonʻt find any of our malasadas in a pastry case—they’re made fresh to order and served straight from our kitchen to you. Come in and enjoy Hawaiiʻs Favorite Donut™.</p>
+                        <a href="#" class="btn btn-primary">Our Story</a>
+                    </div>
+                    <div class="img-wrapper">
+                         <img src="https://images.squarespace-cdn.com/content/v1/67a02403b924866c254370cc/ffcaa7c1-a26c-4bb3-886e-66b790fd477c/malasada-bite+sugar.jpg" alt="A close-up of a sugar-coated malasada with a bite taken out" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instagram-section" class="section">
+            <div class="container">
+                <span class="accent-text text-center" style="display: block;">Get Social</span>
+                <h2>Follow The Freshness</h2>
+                <p class="section-intro">See what's cookin' and share your own sweet moments with us on Instagram @pipelinemalasadas.</p>
+                <div class="insta-grid">
+                    <a href="https://www.instagram.com/pipelinemalasadas/?hl=en" target="_blank" class="insta-post">
+                        <img src="https://order.spoton.com/blob/spoton/order/product-images/08f77af1-7009-41e9-9730-1092a95c47fe.jpg" alt="A dozen malasadas in a box from the pipeline bakery" loading="lazy">
+                        <div class="insta-overlay">@</div>
+                    </a>
+                    <a href="https://www.instagram.com/pipelinemalasadas/?hl=en" target="_blank" class="insta-post">
+                        <img src="https://order.spoton.com/blob/spoton/order/product-images/d8c11e74-2794-4b53-b248-2c6762391b11.jpg" alt="A half-dozen malasadas in a box" loading="lazy">
+                        <div class="insta-overlay">@</div>
+                    </a>
+                    <a href="https://www.instagram.com/pipelinemalasadas/?hl=en" target="_blank" class="insta-post">
+                        <img src="https://order.spoton.com/blob/spoton/order/product-images/2a7833e7-3f33-4f51-b847-bbcf55227d8B.jpg" alt="Ice cream from pipeline creamery" loading="lazy">
+                        <div class="insta-overlay">@</div>
+                    </a>
+                    <a href="https://www.instagram.com/pipelinemalasadas/?hl=en" target="_blank" class="insta-post">
+                        <img src="https://order.spoton.com/blob/spoton/order/product-images/652f1444-2396-4171-8b21-4122d2f25b29.jpg" alt="A coffee drink from pipeline" loading="lazy">
+                        <div class="insta-overlay">@</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter-section" class="section bg-white-wash has-wave-top">
+            <div class="wave-container top">
+                <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" style="fill:var(--color-background);"></path>
+                </svg>
+            </div>
+            <div class="container text-center">
+                 <span class="accent-text">Stay Connected</span>
+                <h2>Join Our 'Ohana</h2>
+                <p class="section-intro">Sign up for our mailing list to get updates on special offers, new flavors, and exclusive coupons.</p>
+                <form action="#" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer has-wave-top">
+        <div class="wave-container top">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill" style="fill: var(--color-white-wash);"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                 <div class="footer-column">
+                     <h4>PIPELINE MALASADAS</h4>
+                     <p style="color: rgba(255,255,255,0.7); font-size: 16px;">Sharing the taste of aloha from our kitchen to you. Hawaii's Favorite Donut™, now in Las Vegas.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Our Story</a></li><li><a href="#">Menu</a></li><li><a href="#">Locations</a></li><li><a href="#">Catering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Order</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Order Now</a></li><li><a href="#">Specials</a></li><li><a href="#">Rewards</a></li><li><a href="#">Fundraising</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Contact</a></li><li><a href="#">FAQ</a></li><li><a href="#">Warming Instructions</a></li><li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-contact">
+                    <p>6945 S. Buffalo Dr. #100, Las Vegas, NV 89113 | <a href="tel:+17025000808">(702) 500-0808</a></p>
+                    <p>&copy; 2025 Pipeline Malasadas. Inspired by Webflow. Redesigned with Aloha.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script to add a class to the header when scrolling
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
