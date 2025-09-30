@@ -186,7 +186,6 @@
         .header.scrolled .nav-link { color: var(--color-dark-blue); }
         .nav-link.active, .nav-link:hover { color: var(--color-seafoam); }
 
-        /* REVISION: Updated nav CTA button color */
         .nav-link.nav-cta {
             background-color: var(--color-button-primary); /* Standout color for hero */
             color: var(--color-white);
@@ -303,6 +302,28 @@
         }
         .dates-box h3 { font-size: 28px; color: var(--color-seafoam); }
         .dates-box p { font-size: 20px; opacity: 0.9; }
+
+        /* Menu Carousel Section */
+        #menu-section { background-color: var(--color-white); }
+        .menu-carousel {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+            gap: 30px; padding-bottom: 30px; -webkit-overflow-scrolling: touch;
+        }
+        .menu-carousel::-webkit-scrollbar { display: none; }
+        .menu-carousel { -ms-overflow-style: none; scrollbar-width: none; }
+        .menu-card {
+            scroll-snap-align: start; flex: 0 0 320px; background: var(--color-white);
+            border-radius: var(--border-radius); overflow: hidden;
+            box-shadow: 0 15px 30px rgba(21, 48, 71, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .menu-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(21, 48, 71, 0.12); }
+        .menu-card img { width: 100%; height: 280px; object-fit: cover; }
+        .menu-content { padding: 24px; }
+        .menu-content-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; min-height: 70px; }
+        .menu-content-header h3 { font-size: 22px; margin-bottom: 8px; line-height: 1.3; }
+        .menu-price { font-family: var(--font-heading); font-size: 20px; font-weight: 700; color: var(--color-shore-break); flex-shrink: 0; }
+        .menu-description { font-size: 15px; line-height: 1.6; color: #555; margin: 0; }
 
         /* Instagram Feed Section */
         .insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
@@ -481,6 +502,58 @@
             </div>
         </section>
 
+        <section id="menu-section" class="section">
+            <div class="container">
+                <span class="accent-text text-center" style="display: block;">Take Some Home</span>
+                <h2>Our Malasada Boxes</h2>
+                <p class="section-intro">Perfect for sharing with your ʻohana. Choose from our pre-assorted boxes or customize your own. Swipe to explore.</p>
+                <div class="menu-carousel">
+                    <div class="menu-card">
+                        <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db152d9ab175ffa7c3fd05.jpeg" alt="Half Pipe Box Custom" loading="lazy">
+                        <div class="menu-content">
+                            <div class="menu-content-header"><h3>Half Pipe Box Custom</h3><div class="menu-price">$21.00</div></div>
+                            <p class="menu-description">A box of 6 fresh malasadas with your choice of flavors.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db1597d6293b702e1b25e8.jpeg" alt="Full Pipe Box Custom" loading="lazy">
+                        <div class="menu-content">
+                            <div class="menu-content-header"><h3>Full Pipe Box Custom</h3><div class="menu-price">$37.80</div></div>
+                            <p class="menu-description">A box of 12 fresh malasadas with your choice of flavors.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db15cbcbc8a8a28151440a.jpeg" alt="Half Pipe Classic Filled" loading="lazy">
+                        <div class="menu-content">
+                            <div class="menu-content-header"><h3>Half Pipe Classic Filled</h3><div class="menu-price">$21.00</div></div>
+                            <p class="menu-description">A delicious assortment of 6 of our classic filled malasadas.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db1604814115b262db465c.jpeg" alt="Full Pipe Box One Flavor" loading="lazy">
+                        <div class="menu-content">
+                            <div class="menu-content-header"><h3>Full Pipe Box One Flavor</h3><div class="menu-price">$37.80</div></div>
+                            <p class="menu-description">A dozen malasadas, all with your favorite single sugar coating.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db162e9ab1756fa5c413b7.jpeg" alt="Half Pipe Box One Flavor" loading="lazy">
+                        <div class="menu-content">
+                            <div class="menu-content-header"><h3>Half Pipe Box One Flavor</h3><div class="menu-price">$21.00</div></div>
+                            <p class="menu-description">A half-dozen malasadas, all with your favorite single sugar coating.</p>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="https://storage.googleapis.com/msgsndr/pOhyYmvU17ZR8w7yLKo5/media/68db16bbfab700da9a0fc0ed.jpeg" alt="Full Pipe Classic Filled" loading="lazy">
+                        <div class="menu-content">
+                            <div class="menu-content-header"><h3>Full Pipe Classic Filled</h3><div class="menu-price">$37.80</div></div>
+                            <p class="menu-description">A delicious assortment of 12 of our classic filled malasadas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="instagram-section" class="section">
             <div class="container">
                 <span class="accent-text text-center" style="display: block;">Get Social</span>
@@ -496,7 +569,7 @@
                         <div class="insta-overlay">@</div>
                     </a>
                     <a href="https://www.instagram.com/pipelinemalasadas/?hl=en" target="_blank" class="insta-post">
-                        <img src="https://order.spoton.com/blob/spoton/order/product-images/2a7833e7-3f33-4f51-b847-bbcf55227d8B.jpg" alt="Ice cream from pipeline creamery" loading="lazy">
+                        <img src="https://order.spoton.com/blob/spoton/order/product-images/2a7833e7-3f33-4f51-b847-bbcf55227d89.jpg" alt="Ice cream from pipeline creamery" loading="lazy">
                         <div class="insta-overlay">@</div>
                     </a>
                     <a href="https://www.instagram.com/pipelinemalasadas/?hl=en" target="_blank" class="insta-post">
